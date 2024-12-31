@@ -15,10 +15,12 @@ services:
       - "5001:8080"
     depends_on:
       - rabbitmq
-      - db
+      - order-write-db
+      - order-read-db
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__OrderDbContext=Host=db;Database=orders;Username=sa;Password=Moaz1234
+      - ConnectionStrings__OrderWriteDbContext=Host=order-write-db;Database=orders;Username=sa;Password=Moaz1234
+      - ConnectionStrings__OrderReadDbContext=Host=order-read-db;Database=orders;Username=sa;Password=Moaz1234
       - RabbitMQ__HostName=rabbitmq
 
   notificationservice:
@@ -54,13 +56,20 @@ services:
       - RABBITMQ_DEFAULT_USER=user
       - RABBITMQ_DEFAULT_PASS=password
 
-  db:
+  order-write-db:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       SA_PASSWORD: "Moaz1234"
       ACCEPT_EULA: "Y"
     ports:
-      - "1433:1433"
+      - "5896:1433"  
+  order-read-db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "Moaz1234"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "5897:1433"
 
 
 
