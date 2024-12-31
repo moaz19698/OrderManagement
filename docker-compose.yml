@@ -1,0 +1,68 @@
+
+
+     
+
+version: '3.4'
+
+services:
+  orderservice:
+    image: ${DOCKER_REGISTRY-}orderservice
+    build:
+      context: .
+      dockerfile: OrderService/OrderService.Api/Dockerfile
+
+    ports:
+      - "5001:8080"
+    depends_on:
+      - rabbitmq
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__OrderDbContext=Host=db;Database=orders;Username=sa;Password=Moaz1234
+      - RabbitMQ__HostName=rabbitmq
+
+  notificationservice:
+    image: ${DOCKER_REGISTRY-}notificationservice
+    build:
+      context: .
+      dockerfile: NotificationService/NotificationService.Api/Dockerfile
+
+    ports:
+      - "5002:8080"
+    depends_on:
+      - rabbitmq
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RabbitMQ__HostName=rabbitmq
+
+  # apigateway:
+  #   image: ${DOCKER_REGISTRY-}apigateway
+  #   build:
+  #     context: ./ApiGateway
+  #   ports:
+  #     - "5000:80"
+  #   depends_on:
+  #     - orderservice
+  #     - notificationservice
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "Moaz1234"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+
+
+
+
