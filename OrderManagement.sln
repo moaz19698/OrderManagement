@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService.Infrast
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DE8AF8B5-917C-4862-904E-0C4563EEF98D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocelot.ApiGateway", "ApiGateway\Ocelot.ApiGateway\Ocelot.ApiGateway.csproj", "{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{DE8AF8B5-917C-4862-904E-0C4563EEF98D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8AF8B5-917C-4862-904E-0C4563EEF98D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8AF8B5-917C-4862-904E-0C4563EEF98D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{315F389A-BA2E-47D7-893A-2DBC4084FE3D} = {52E1F541-67B5-4CF2-B372-BCAEA003492A}
 		{38BE7B82-D297-4CF0-952E-4CF4B1B4B3FD} = {F501F351-3DC7-46A3-ABE9-B4827DA2B74A}
 		{9AC755FB-4854-4413-90E5-BF6F81BB66C3} = {1F8B4D05-E2E3-4B44-8273-8DFA1442CDCB}
+		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5} = {71AE0E06-257D-433A-8BC3-FDDD4DBEEF0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {48159FEE-875C-495F-B65E-9F4E09185B20}

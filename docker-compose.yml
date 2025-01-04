@@ -70,6 +70,19 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "5897:1433"
+  ocelot.gateway:
+    image: ocelotgateway
+    build:
+      context: .
+      dockerfile: Ocelot/Ocelot.Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - orderservice.api
+      - notificationservice.api
+    volumes:
+      - ./ocelot.json:/app/ocelot.json # Bind the Ocelot configuration file
+
 
 
 
