@@ -74,12 +74,12 @@ services:
     image: ocelotgateway
     build:
       context: .
-      dockerfile: Ocelot/Ocelot.Dockerfile
+      dockerfile: ApiGateway/Ocelot.ApiGateway/Dockerfile
     ports:
       - "8080:80"
     depends_on:
-      - orderservice.api
-      - notificationservice.api
+      - orderservice
+      - notificationservice
     volumes:
       - ./ocelot.json:/app/ocelot.json # Bind the Ocelot configuration file
 
