@@ -12,8 +12,8 @@
       ],
       "UpstreamHttpMethod": [ "GET", "PUT", "PATCH" ],
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": [ "orders.read" ]
+        "AuthenticationProviderKey": "IdentityServer",
+        "AllowedScopes": [ "orderService.read" ]
       }
     },
     {
@@ -28,8 +28,8 @@
       ],
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": [ "orders.write" ]
+        "AuthenticationProviderKey": "IdentityServer",
+        "AllowedScopes": [ "order.read", "order.write" ]
       }
     },
     {
