@@ -1,3 +1,6 @@
+using NotificationService.Application.Consumers;
+using NotificationService.Application.Interfaces;
+using NotificationService.Infrastructure.Messaging;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
@@ -25,6 +28,20 @@ builder.Services.AddOpenTelemetry()
                 options.AgentPort = int.Parse(builder.Configuration["Jaeger:Port"] ?? "6831");
             });
     });
+
+
+
+// Add services
+builder.Services.AddSingleton<INotificationService, NotificationService.Application.Services.NotificationService>();
+builder.Services.AddSingleton(sp =>
+{
+    return new RabbitMQConsumer(
+        hostname: "localhost",
+        queueName: "order_status_changed",
+        messageProcessor: sp.GetRequiredService<OrderStatusChangedConsumer>().ConsumeAsync
+    );
+});
+builder.Services.AddSingleton<OrderStatusChangedConsumer>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,5 +56,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+// Start RabbitMQ Consumer
+var rabbitMQConsumer = app.Services.GetRequiredService<RabbitMQConsumer>();
+rabbitMQConsumer.Start();
 app.Run();
