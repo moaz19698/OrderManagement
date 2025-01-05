@@ -1,3 +1,4 @@
+using Duende.IdentityServer.Models;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
@@ -10,25 +11,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var authConfig = builder.Configuration.GetSection("Authentication");
-// Configure authentication
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
-    {
-        options.Authority = authConfig["Authority"];
-        options.TokenValidationParameters = new()
-        {
-            ValidateAudience = false
-        };
-    });
+var identityConfig = builder.Configuration.GetSection("IdentityServer");
+var clients = identityConfig.GetSection("Clients").Get<List<Client>>();
+var apiScopes = identityConfig.GetSection("ApiScopes").Get<List<ApiScope>>();
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("OrderServiceRead", policy =>
-        policy.RequireClaim("scope", "order.read"));
-    options.AddPolicy("OrderServiceWrite", policy =>
-        policy.RequireClaim("scope", "order.write"));
-});
+// Configure IdentityServer
+builder.Services.AddIdentityServer()
+    .AddInMemoryClients(clients)
+    .AddInMemoryApiScopes(apiScopes);
 
 builder.Services.AddOpenTelemetry()
     .WithTracing(traceBuilder =>
@@ -36,7 +26,7 @@ builder.Services.AddOpenTelemetry()
         traceBuilder
             .SetResourceBuilder(
                 ResourceBuilder.CreateDefault()
-                    .AddService("OderService")) // Replace with your service name
+                    .AddService("IdentityServer")) // Replace with your service name
             .AddAspNetCoreInstrumentation() // Instrument HTTP requests
             .AddHttpClientInstrumentation() // Instrument HTTP client calls
             .AddJaegerExporter(options =>
@@ -55,10 +45,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.MapControllers();
+app.UseIdentityServer();
 
 app.Run();

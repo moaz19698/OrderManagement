@@ -19,13 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService.Api", "OrderSe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService.Application", "OrderService.Application", "{93F6331B-D983-41D2-8D0B-1A6BE487C077}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Api", "OrderService\OrderService.Api\OrderService.Api.csproj", "{00751646-D8A7-4E53-BCA1-A2315C9194EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Api", "OrderService\OrderService.Api\OrderService.Api.csproj", "{00751646-D8A7-4E53-BCA1-A2315C9194EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Application", "OrderService\OrderService.Application\OrderService.Application.csproj", "{5E774D40-1286-42A5-A559-7BEA678217CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Application", "OrderService\OrderService.Application\OrderService.Application.csproj", "{5E774D40-1286-42A5-A559-7BEA678217CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Domain", "OrderService\OrderService.Domain\OrderService.Domain.csproj", "{C75E62A9-0BE2-45DB-9B8A-BCE43500B04E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Domain", "OrderService\OrderService.Domain\OrderService.Domain.csproj", "{C75E62A9-0BE2-45DB-9B8A-BCE43500B04E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Infrastructure", "OrderService\OrderService.Infrastructure\OrderService.Infrastructure.csproj", "{D9868EB3-B815-4A6A-A117-0A7310DB2AC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Infrastructure", "OrderService\OrderService.Infrastructure\OrderService.Infrastructure.csproj", "{D9868EB3-B815-4A6A-A117-0A7310DB2AC2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationService.Api", "NotificationService.Api", "{3D164187-E072-4132-8233-6F2A524C665C}"
 EndProject
@@ -35,17 +35,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationService.Applica
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationService.Infrastructure", "NotificationService.Infrastructure", "{1F8B4D05-E2E3-4B44-8273-8DFA1442CDCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService.Api", "NotificationService\NotificationService.Api\NotificationService.Api.csproj", "{CA3795D8-672F-4867-8322-421953BCB92D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService.Api", "NotificationService\NotificationService.Api\NotificationService.Api.csproj", "{CA3795D8-672F-4867-8322-421953BCB92D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService.Application", "NotificationService\NotificationService.Application\NotificationService.Application.csproj", "{315F389A-BA2E-47D7-893A-2DBC4084FE3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService.Application", "NotificationService\NotificationService.Application\NotificationService.Application.csproj", "{315F389A-BA2E-47D7-893A-2DBC4084FE3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService.Domain", "NotificationService\NotificationService.Domain\NotificationService.Domain.csproj", "{38BE7B82-D297-4CF0-952E-4CF4B1B4B3FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService.Domain", "NotificationService\NotificationService.Domain\NotificationService.Domain.csproj", "{38BE7B82-D297-4CF0-952E-4CF4B1B4B3FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService.Infrastructure", "NotificationService\NotificationService.Infrastructure\NotificationService.Infrastructure.csproj", "{9AC755FB-4854-4413-90E5-BF6F81BB66C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService.Infrastructure", "NotificationService\NotificationService.Infrastructure\NotificationService.Infrastructure.csproj", "{9AC755FB-4854-4413-90E5-BF6F81BB66C3}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DE8AF8B5-917C-4862-904E-0C4563EEF98D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocelot.ApiGateway", "ApiGateway\Ocelot.ApiGateway\Ocelot.ApiGateway.csproj", "{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot.ApiGateway", "ApiGateway\Ocelot.ApiGateway\Ocelot.ApiGateway.csproj", "{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{57DF2D37-49E8-4CE2-969C-9AC6DA55B303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{F155F944-DE17-4553-8EAF-0BDEB4983ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,10 @@ Global
 		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F155F944-DE17-4553-8EAF-0BDEB4983ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F155F944-DE17-4553-8EAF-0BDEB4983ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F155F944-DE17-4553-8EAF-0BDEB4983ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F155F944-DE17-4553-8EAF-0BDEB4983ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,7 @@ Global
 		{38BE7B82-D297-4CF0-952E-4CF4B1B4B3FD} = {F501F351-3DC7-46A3-ABE9-B4827DA2B74A}
 		{9AC755FB-4854-4413-90E5-BF6F81BB66C3} = {1F8B4D05-E2E3-4B44-8273-8DFA1442CDCB}
 		{F01CCCB8-857C-4008-8C7E-C014D65F4AC5} = {71AE0E06-257D-433A-8BC3-FDDD4DBEEF0C}
+		{F155F944-DE17-4553-8EAF-0BDEB4983ABC} = {57DF2D37-49E8-4CE2-969C-9AC6DA55B303}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {48159FEE-875C-495F-B65E-9F4E09185B20}
